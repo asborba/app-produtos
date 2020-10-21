@@ -50,7 +50,7 @@ function listar() {
 
         $listaProdutos = $stmt->fetchAll(
             //fetch_props chama o construtor 1º e depois atribui os valores do banco
-           PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Produto', [0, '', 0]);
+           PDO::FETCH_ASSOC|PDO::FETCH_PROPS_LATE);
            return $listaProdutos;
    }
 
