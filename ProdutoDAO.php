@@ -66,7 +66,7 @@ function buscarId($id) {
     $comando = $this->pdo->prepare($q);
     $comando->bindParam(":id", $id);
     $comando->execute();
-    $comando->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Produto', [0, '', 0]);
+    $comando->setFetchMode(PDO::FETCH_ASSOC|PDO::FETCH_PROPS_LATE);
     $obj = $comando->fetch();
     return($obj);
 }
